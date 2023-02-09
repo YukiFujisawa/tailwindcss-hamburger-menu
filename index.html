@@ -7,19 +7,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <button id="menuBtn" type="button" class="fixed top-4 right-4 z-10 flex h-14 w-14 items-center justify-center rounded-md border-none bg-blue-500 text-white">
-      <!-- https://fontawesome.com/icons/bars?s=solid&f=classic -->
-      <i id="menuIconBars" class="fa-solid fa-bars fa-2x"></i>
+    <header>
+      <div class="flex h-20 items-center justify-between border-b-2 px-4">
+        <h1 class="text-2xl">ロゴ</h1>
+        <nav>
+          <button id="menuBtn" type="button" class="fixed top-3 right-4 z-10 flex h-14 w-14 items-center justify-center rounded-md border-none bg-blue-500 text-white md:hidden">
+            <!-- https://fontawesome.com/icons/bars?s=solid&f=classic -->
+            <i id="menuIconBars" class="fa-solid fa-bars fa-2x"></i>
 
-      <!-- https://fontawesome.com/icons/xmark?s=solid&f=classic -->
-      <i id="menuIconX" class="fa-solid fa-xmark fa-2x"></i>
-    </button>
-    <ul id="menu" class="fixed top-4 left-4 z-0 flex max-h-screen w-[calc(100%-32px)] translate-x-[100vw] flex-col rounded-md bg-blue-500 text-center font-bold text-white transition-all ease-linear">
-      <li class="p-3"><a href="">TOP</a></li>
-      <li class="p-3"><a href="">ABOUT</a></li>
-      <li class="p-3"><a href="">BLOG</a></li>
-      <li class="p-3"><a href="">CONTACT</a></li>
-    </ul>
+            <!-- https://fontawesome.com/icons/xmark?s=solid&f=classic -->
+            <i id="menuIconX" class="fa-solid fa-xmark fa-2x"></i>
+          </button>
+          <ul id="menu" class="fixed top-3 left-4 z-0 flex max-h-screen w-[calc(100%-32px)] translate-x-[100vw] flex-col rounded-md bg-blue-500 text-center font-bold text-white transition-all ease-linear md:static md:w-full md:translate-x-0 md:flex-row md:bg-white md:text-black">
+            <li class="p-3"><a href="">TOP</a></li>
+            <li class="p-3"><a href="">ABOUT</a></li>
+            <li class="p-3"><a href="">BLOG</a></li>
+            <li class="p-3"><a href="">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <script>
       menuIconBars.style.display = 'block';
       menuIconX.style.display = 'none';
