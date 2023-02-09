@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- https://cdnjs.com/libraries/font-awesome からlinkタグ取得 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button
+      id="menuBtn"
+      type="button"
+      class="fixed top-4 right-4 z-10 flex h-14 w-14 items-center justify-center rounded-md border-none bg-blue-500 text-white"
+    >
+      <!-- https://fontawesome.com/icons/bars?s=solid&f=classic -->
+      <i id="menuIconBars" class="fa-solid fa-bars fa-2x"></i>
+
+      <!-- https://fontawesome.com/icons/xmark?s=solid&f=classic -->
+      <i id="menuIconX" class="fa-solid fa-xmark fa-2x"></i>
+    </button>
+    <div
+      id="menu"
+      class="fixed top-4 left-4 z-0 flex max-h-screen w-[calc(100%-32px)] translate-x-[100vw] flex-col rounded-md bg-blue-500 text-center font-bold text-white transition-all ease-linear"
+    >
+      <div class="p-3"><a href="">TOP</a></div>
+      <div class="p-3"><a href="">ABOUT</a></div>
+      <div class="p-3"><a href="">BLOG</a></div>
+      <div class="p-3"><a href="">CONTACT</a></div>
+    </div>
+    <script>
+      menuIconBars.style.display = 'block';
+      menuIconX.style.display = 'none';
+
+      menuBtn.addEventListener('click', () => {
+        // クリックした時に、"translate-x-[100vw]"を追加、削除する。
+        // "translate-x-[100vw]"が追加されると
+        // menuが画面の外に位置するので非表示となる。
+        menu.classList.toggle('translate-x-[100vw]');
+
+        if (menu.classList.contains('translate-x-[100vw]')) {
+          // メニュー非表示の場合
+          menuIconBars.style.display = 'block';
+          menuIconX.style.display = 'none';
+        } else {
+          // メニュー表示の場合
+          menuIconBars.style.display = 'none';
+          menuIconX.style.display = 'block';
+        }
+      });
+    </script>
+  </body>
+</html>
