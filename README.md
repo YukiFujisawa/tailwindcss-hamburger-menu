@@ -9,6 +9,8 @@
 
 https://yukifujisawa.github.io/tailwindcss-hamburger-menu/
 
-## コード(コピペ OK です)
+## コード(コピペする場合は、style.cssも一緒にどうぞ！)
 
 [index.html](https://github.com/YukiFujisawa/tailwindcss-hamburger-menu/blob/main/index.html)
+
+
