@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width" />
     <title>Tailwind CSS で作成したハンバーガーメニューサンプル</title>
     <!-- https://cdnjs.com/libraries/font-awesome からlinkタグ取得 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,14 +19,21 @@
       <div class="flex h-20 items-center justify-between border-b-2 px-4">
         <h1 class="px-3 text-2xl">ロゴ</h1>
         <nav>
-          <button id="menuBtn" type="button" class="fixed top-3 right-4 z-10 flex h-14 w-14 items-center justify-center rounded-md border-none bg-blue-500 text-white sm:hidden">
+          <button
+            id="menuBtn"
+            type="button"
+            class="fixed top-3 right-4 z-10 flex h-14 w-14 items-center justify-center rounded-md border-none bg-blue-500 text-white sm:hidden"
+          >
             <!-- https://fontawesome.com/icons/bars?s=solid&f=classic -->
             <i id="menuIconBars" class="fa-solid fa-bars fa-2x"></i>
 
             <!-- https://fontawesome.com/icons/xmark?s=solid&f=classic -->
-            <i id="menuIconX" class="fa-solid fa-xmark fa-2x"></i>
+            <i id="menuIconX" class="fa-solid fa-xmark fa-2x hidden"></i>
           </button>
-          <ul id="menu" class="fixed top-3 left-4 z-0 flex max-h-screen w-[calc(100%-32px)] translate-x-[100vw] flex-col rounded-md bg-blue-500 text-center font-bold text-white transition-all ease-linear sm:static sm:w-full sm:translate-x-0 sm:flex-row sm:place-items-center sm:bg-white sm:text-black">
+          <ul
+            id="menu"
+            class="fixed top-0 left-0 z-0 flex w-full translate-x-full flex-col bg-blue-500 text-center font-bold text-white transition-all ease-linear sm:static sm:w-full sm:translate-x-0 sm:flex-row sm:place-items-center sm:bg-white sm:text-black"
+          >
             <li class="p-3"><a href="">TOP</a></li>
             <li class="p-3"><a href="">ABOUT</a></li>
             <li class="p-3"><a href="">BLOG</a></li>
@@ -31,24 +44,13 @@
     </header>
 
     <script>
-      menuIconBars.style.display = 'block';
-      menuIconX.style.display = 'none';
-
       menuBtn.addEventListener('click', () => {
-        // クリックした時に、"translate-x-[100vw]"を追加、削除する。
-        // "translate-x-[100vw]"が追加されると
+        // クリックした時に、"translate-x-full"を追加、削除する。
+        // "translate-x-full"が追加されると
         // menuが画面の外に位置するので非表示となる。
-        menu.classList.toggle('translate-x-[100vw]');
-
-        if (menu.classList.contains('translate-x-[100vw]')) {
-          // メニュー非表示の場合
-          menuIconBars.style.display = 'block';
-          menuIconX.style.display = 'none';
-        } else {
-          // メニュー表示の場合
-          menuIconBars.style.display = 'none';
-          menuIconX.style.display = 'block';
-        }
+        menu.classList.toggle('translate-x-full');
+        menuIconBars.classList.toggle('hidden');
+        menuIconX.classList.toggle('hidden');
       });
     </script>
   </body>
